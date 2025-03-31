@@ -9,6 +9,10 @@ Olvasd be az f1.txt adatait, majd oldd meg az alábbi feladatokat!
 A megoldott feladatokat a kiirt_adatok nevű mappába hozd létre statisztika.txt néven!
 """
 
+with open("beolvasando_adatok/f1.txt", "r", encoding="utf-8") as forrasfajl:
+    for sor in forrasfajl:
+        
+
 
 print("A beolvasott fájlban összesen ____ versenyző szerepel.")
 print("A legtöbb futamot nyert versenyző: ____")
