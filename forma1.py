@@ -13,7 +13,6 @@ versenyzok = []
 futamok  = []
 
 with open("beolvasando_adatok/f1.txt", "r", encoding="utf-8") as forrasfajl:
-    for i in range(1):
         next(forrasfajl)
     for sor in forrasfajl:
         adatok = sor.strip().split(";")
@@ -26,11 +25,6 @@ with open("beolvasando_adatok/f1.txt", "r", encoding="utf-8") as forrasfajl:
 
 
 futamok_atlaga = sum(futamok) / len(futamok)
-legtobb_futam = futamok.sort()
-print(legtobb_futam)
-
-legtobb_nyert_futam = sorted(gyozelmek_szama[0])
-print(leg)
 
 
 with open("kiirt_adatok/statisztika.txt", "w", encoding="utf-8") as celfajl:
