@@ -9,12 +9,32 @@ Olvasd be az f1.txt adatait, majd oldd meg az alábbi feladatokat!
 A megoldott feladatokat a kiirt_adatok nevű mappába hozd létre statisztika.txt néven!
 """
 
+versenyzok = []
+futamok  = []
+
 with open("beolvasando_adatok/f1.txt", "r", encoding="utf-8") as forrasfajl:
+    for i in range(1):
+        next(forrasfajl)
     for sor in forrasfajl:
-        
+        adatok = sor.strip().split(";")
+        versenyzo = adatok[0]
+        csapat = adatok[1]
+        gyozelmek_szama = adatok[2]
+        futamok_szama = int(adatok[3])
+        versenyzok.append(versenyzo)
+        futamok.append(futamok_szama)
 
 
-print("A beolvasott fájlban összesen ____ versenyző szerepel.")
-print("A legtöbb futamot nyert versenyző: ____")
-print("A legtöbb futamot teljesített versenyző: ____")
-print("Az átlagos futamszám: ____")
+futamok_atlaga = sum(futamok) / len(futamok)
+legtobb_futam = futamok.sort()
+print(legtobb_futam)
+
+legtobb_nyert_futam = sorted(gyozelmek_szama[0])
+print(leg)
+
+
+with open("kiirt_adatok/statisztika.txt", "w", encoding="utf-8") as celfajl:
+    print(f"A beolvasott fájlban összesen {len(versenyzok)} versenyző szerepel.", file=celfajl)
+    print("A legtöbb futamot nyert versenyző: ____", file=celfajl)
+    print("A legtöbb futamot teljesített versenyző: ____", file=celfajl)
+    print(f"Az átlagos futamszám: {futamok_atlaga}", file=celfajl)
